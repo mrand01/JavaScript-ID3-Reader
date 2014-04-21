@@ -142,7 +142,8 @@ function BinaryFile(strData, iDataOffset, iDataLength) {
 }
 
 var js = document.createElement('script');
-js.textContent = "<script type='text/vbscript'>\r\nFunction IEBinary_getByteAt(strBinary, iOffset)\r\n\tIEBinary_getByteAt = AscB(MidB(strBinary,iOffset+1,1))\r\nEnd Function\r\nFunction IEBinary_getLength(strBinary)\r\n\tIEBinary_getLength = LenB(strBinary)\r\nEnd Function\r\n\x3c/script>\r\n";
+js.textContent = '<script type="text/vbscript"></script>';
+//js.textContent = "<script type='text/vbscript'>\r\nFunction IEBinary_getByteAt(strBinary, iOffset)\r\n\tIEBinary_getByteAt = AscB(MidB(strBinary,iOffset+1,1))\r\nEnd Function\r\nFunction IEBinary_getLength(strBinary)\r\n\tIEBinary_getLength = LenB(strBinary)\r\nEnd Function\r\n\x3c/script>\r\n";
 document.getElementsByTagName('head')[0].appendChild(js);
 /*
 document.write(
