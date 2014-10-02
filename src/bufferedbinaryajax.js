@@ -269,6 +269,11 @@ var BufferedBinaryAjax = function(strUrl, fncCallback, fncError) {
 			strUrl, 
 			function(oHTTP) {
 				var iLength = parseInt(oHTTP.getResponseHeader("Content-Length"),10) || -1;
+				if(oHTTP.status == "206") {
+					var rangeString = oHTTP.getResponseHeader("Content-Range");
+					var split = rangeString.split("/");
+					iLength = parseInt(split[1],10) || -1;
+				}
 				fncCallback(new BufferedBinaryFile(strUrl, iLength));
 			},
             fncError
